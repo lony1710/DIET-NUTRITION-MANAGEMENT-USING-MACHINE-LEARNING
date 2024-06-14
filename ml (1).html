@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NutriSuggest</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f8f8;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+			
+        }
+
+        header .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        #hero-image {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+			
+        }
+
+        #hero-image .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+			color: white;
+        }
+
+        #meal-plan-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group.gender-block {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group.gender-block label {
+            margin-right: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>NutriSuggest<span class="color">.</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Back</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="hero-image">
+        <div class="wrapper">
+            <p><strong>Get personalized meal plans based on your weight, height, and age. Achieve your fitness goals with our nutritious and delicious recipes.</strong></p>
+
+            <form id="meal-plan-form">
+                <div class="form-group">
+                    <label for="age"><strong>Age:</strong></label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight"><strong>Weight (kg):</strong></label>
+                    <input type="number" id="weight" name="weight" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="height"><strong>Height (cm):</strong></label>
+                    <input type="number" id="height" name="height" required>
+                </div>
+
+                <div class="form-group gender-block">
+                    <label><strong>Gender:</strong></label>
+                    <label for="male"><input type="radio" id="male" name="gender" value="male" required><strong> Male</strong></label>
+                    <label for="female"><input type="radio" id="female" name="gender" value="female" required><strong> Female</strong></label>
+                </div>
+
+                <button type="button" onclick="calculateMealPlan()">Get Meal Plan</button>
+            </form>
+
+            <!-- Display Resulting Meal Plan -->
+            <div id="meal-plan-result">
+                <!-- The calculated meal plan will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
